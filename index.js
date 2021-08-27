@@ -15,7 +15,7 @@ content.style.cssText = `
     background-color:black;
     color:white;
     height: 100px;
-    `;
+`;
 
 const list = document.getElementById('list1');
 
@@ -28,3 +28,32 @@ ul
 7) найдите все li элементы на странице из JS, получите массив
 8) дайте всем элементам массива стиль текста курсив 
 (или css классом или строковыми стилями style) */
+
+const container = document.getElementById('main_container');
+const ulElement = document.createElement('ul');
+
+const liElement = document.createElement('li');
+
+for (let i = 1; i < 4; i++) {
+    const liElement = document.createElement('li');
+    liElement.innerText = 'list' + ' ' + i
+    ulElement.appendChild(liElement)    
+}
+
+container.appendChild(ulElement);
+
+
+const liGetElemByTags = document.getElementsByTagName('li');
+
+console.log(liGetElemByTags);
+
+document.querySelectorAll('li').forEach(function(element){
+    element.style.cssText = `
+    margin: 10px 0;
+    color: red;
+    list-style: none;
+    text-decoration: underline 2px black;
+    font-size: 20px;
+    font-style: italic;
+    `;
+});
