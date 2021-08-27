@@ -42,7 +42,6 @@ for (let i = 1; i < 4; i++) {
 
 container.appendChild(ulElement);
 
-
 const liGetElemByTags = document.getElementsByTagName('li');
 
 console.log(liGetElemByTags);
@@ -57,3 +56,34 @@ document.querySelectorAll('li').forEach(function(element){
     font-style: italic;
     `;
 });
+
+/* Создание элементов из JS:
+1) создайте элемент с тэгом span
+2) добавьте ему текст внутрь
+3) добавьте стили для этого span (css класс)
+4) добавить span в конец body
+5) создать тэги div 3 шт c атрибутом 
+id = ("divElem"+index) зависящим от индекса
+добавить элементы в конец body */
+
+const span = document.createElement('span');
+span.id = 'idspan1';
+span.innerText = '123asd13asd1ads';
+
+document.body.appendChild(span);
+span.style.cssText = `
+    color: purple;
+    font-size: 25px;
+`;
+
+const footer = document.createElement('footer');
+
+document.body.appendChild(footer);
+
+for (let i = 0; i < 3; i++) {
+    const divElement = document.createElement('div');
+    divElement.innerText = 'div' + ' ' + i
+    divElement.id = 'div_' + i
+    footer.appendChild(divElement) 
+    
+}
